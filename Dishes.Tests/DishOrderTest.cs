@@ -40,7 +40,7 @@ namespace Dishes.Tests
         [TestCase("night, 1 , 2, 3, 5", "steak, potato, wine, error")]
         public void PrintFoodsTest(string input, string expectValue)
         {
-            DishOrder order = new DishOrder(new RulesImplement());
+            DishOrder order = new DishOrder(new RulesImplement(), new MealsImplement());
             Assert.IsNotNull(order);
 
             string output = order.PrintFoods(input);

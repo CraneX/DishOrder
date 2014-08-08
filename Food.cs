@@ -12,7 +12,7 @@ namespace Dishes
     internal class Food
     {
         private DayTime dayTime;
-
+        
         public Food(DayTime dt)
         {
             this.dayTime = dt; 
@@ -40,9 +40,9 @@ namespace Dishes
         /// to ouptut food as string
         /// </summary>
         /// <returns></returns>
-        public override string ToString()
+        public string PrintFood(IMeals meals)
         {
-            string s = Meals.Provide(this.dayTime, FoodType);
+            string s = meals.Provide(this.dayTime, FoodType);
             if (!string.IsNullOrEmpty(s))
             {
                 if (Number > 1)

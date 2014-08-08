@@ -30,7 +30,8 @@ namespace Dishes.Tests
         [TestCase(DayTime.Night, DishType.Dessert, "cake")]
         public void ProviderTest(DayTime dt, DishType type, string expectValue)
         {
-            Assert.AreEqual(Meals.Provide(dt, type), expectValue);
+            MealsImplement meals = new MealsImplement();
+            Assert.AreEqual(meals.Provide(dt, type), expectValue);
         }
     }
 }

@@ -34,7 +34,7 @@ namespace Dishes.Tests
             };
 
             Assert.IsNotNull(food);
-            Assert.AreEqual(food.ToString(), expectValue);
+            Assert.AreEqual(food.PrintFood(new MealsImplement()), expectValue);
         }
     }
 }

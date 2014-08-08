@@ -9,20 +9,20 @@ namespace Dishes
     /// <summary>
     /// To store meal type and name mapping, we can expand it with multiple foods list
     /// </summary>
-    internal static class Meals
+    internal class MealsImplement : IMeals
     {
         /// <summary>
         /// morning meal list
         /// </summary>
 
-        private static readonly IDictionary<DishType, string> morningMeal;
+        private IDictionary<DishType, string> morningMeal;
         
         /// <summary>
         /// night meal list
         /// </summary>
-        private static readonly IDictionary<DishType, string> nightMeal;
+        private IDictionary<DishType, string> nightMeal;
 
-        static Meals()
+        public MealsImplement()
         {
             //we can load meal from xml or database
             morningMeal = new Dictionary<DishType, string>()
@@ -47,7 +47,7 @@ namespace Dishes
         /// <param name="dt"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static string Provide(DayTime dt, DishType type)
+        public  string Provide(DayTime dt, DishType type)
         {
             string meal;
 

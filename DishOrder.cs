@@ -17,11 +17,20 @@ namespace Dishes
 
         private static readonly ILog log = LogManager.GetLogger(typeof(DishOrder));
 
-        private static IRules OrderRules;
+        private IRules orderRules;
 
-        public DishOrder(IRules rules)
+        private IMeals mealsProvder;
+
+        public DishOrder(IRules rules, IMeals mealsProvider)
         {
-            OrderRules = rules;
+            if (rules == null)
+                throw new ArgumentNullException("Rules can't be null!");
+
+            if (mealsProvider == null)
+                throw new ArgumentNullException("Meals Provider can't be null!");
+
+            this.orderRules = rules;
+            this.mealsProvder = mealsProvider;
         }
 
         /// <summary>
@@ -95,7 +104,7 @@ namespace Dishes
 
                 IEnumerable<string> list =
                     foodList.Values.OrderBy(e => e.FoodType)
-                    .Select(e => e.ToString())
+                    .Select(e => e.PrintFood(mealsProvder))
                     .Where(e => !string.IsNullOrEmpty(e));
 
                 sb.Append(string.Join<string>(Sep, list));
@@ -132,7 +141,7 @@ namespace Dishes
                 number += f.Number;
             }
 
-            if (OrderRules.IsAllow(dt, type, number))
+            if (orderRules.IsAllow(dt, type, number))
             {
                 if (f == null)
                 {

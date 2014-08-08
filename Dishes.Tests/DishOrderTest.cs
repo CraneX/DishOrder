@@ -27,15 +27,17 @@ namespace Dishes.Tests
         [TestCase("night", "error")]
         [TestCase("123", "error")]
         [TestCase("morning, 0, 2, 3", "error")]
+        [TestCase("morning, -1, ", "error")]
         [TestCase("morning, 1, 2, 3", "eggs, toast, coffee")]
-        [TestCase("morning, 2, 1, 3", "eggs, toast, coffee")]
+        [TestCase("MORNING, 2, 1, 3", "eggs, toast, coffee")]
         [TestCase("morning, 3, 2, 3, 1", "eggs, toast, coffee(x2)")]
         [TestCase("morning, 1, 2, 3, 4", "eggs, toast, coffee, error")]
         [TestCase("morning, 1, 2, 3, 3, 3", "eggs, toast, coffee(x3)")]
         [TestCase("night, 1, 2, 3, 4", "steak, potato, wine, cake")]
-        [TestCase("night, 1, 2, 2, 4", "steak, potato(x2), cake")]
+        [TestCase("NIGHT, 1, 2, 2, 4", "steak, potato(x2), cake")]
         [TestCase("night, 1, 2, 3, 5", "steak, potato, wine, error")]
         [TestCase("night, 1, 1, 2, 3, 5", "steak, error")]
+        [TestCase("night, 1 , 2, 3, 5", "steak, potato, wine, error")]
         public void PrintFoodsTest(string input, string expectValue)
         {
             DishOrder order = new DishOrder();

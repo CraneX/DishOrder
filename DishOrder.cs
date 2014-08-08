@@ -161,7 +161,7 @@ namespace Dishes
         {
             dish = DishType.Unknown;
             int n;
-            if (int.TryParse(index, out n))
+            if (int.TryParse(StringHelper.Trim(index), out n))
             {
                 if (n > (int)DishType.Unknown && n <= (int)DishType.Dessert)
                 {

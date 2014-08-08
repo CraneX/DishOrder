@@ -19,3 +19,10 @@ Log4Net 1.2.3
 Run Build Command:
 
 	Build.BAT
+	
+Run Execute command:
+
+	bin\Release\Dishes [argument]
+	
+e.g.
+	Dishes morning, 1, 2, 3

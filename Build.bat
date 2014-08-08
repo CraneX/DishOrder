@@ -9,7 +9,7 @@ IF EXIST "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe" (
   EXIT /B 1
 )
 
-
+echo. 
 echo Building DishOrder.sln...
 "%MSBUILDEXE%" /t:Rebuild /p:Configuration=Release Dishes.sln
 IF ERRORLEVEL 1 (
@@ -19,7 +19,9 @@ IF ERRORLEVEL 1 (
 
 
 IF EXIST "Dishes.Tests\bin\Release\Dishes.Tests.exe" (
+	echo. 
 	echo Start run UnitTest...
+	echo.
 	call Dishes.Tests\bin\Release\Dishes.Tests.exe
 ) ELSE (
   ECHO ERROR: Could not find Dishes.Tests.exe

@@ -10,15 +10,21 @@ namespace Dishes
     /// <summary>
     /// Handle input text as Dish order, and print result
     /// </summary>
-    public class DishOrder
+    public class DishOrder : IDishOrder
     {
         private const string Error = "error";
         private const string Sep = ", "; //separator chars
 
         private static readonly ILog log = LogManager.GetLogger(typeof(DishOrder));
 
+        /// <summary>
+        /// dish order rules implement
+        /// </summary>
         private IRules orderRules;
 
+        /// <summary>
+        /// meal provider implement
+        /// </summary>
         private IMeals mealsProvder;
 
         public DishOrder(IRules rules, IMeals mealsProvider)
@@ -36,15 +42,15 @@ namespace Dishes
         /// <summary>
         /// Print food result based on input require, output error if null/empty string/invalid input
         /// </summary>
-        /// <param name="input">input command</param>
+        /// <param name="command">input command</param>
         /// <returns>food list</returns>
-        public string PrintFoods(string input)
+        public string PrintFoods(string command)
         {
-            if (!string.IsNullOrEmpty(input))
+            if (!string.IsNullOrEmpty(command))
             {
-                log.InfoFormat("input:{0}", input);
+                log.InfoFormat("input:{0}", command);
 
-                string[] arr = StringHelper.Trim(input).Split(',');
+                string[] arr = StringHelper.Trim(command).Split(',');
 
                 if (arr.Length <= 1)
                 {

@@ -50,13 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DishOrderTest.cs" />
-    <Compile Include="FoodTest.cs" />
-    <Compile Include="MealsTest.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Source\DishOrderTest.cs" />
+    <Compile Include="Source\FoodTest.cs" />
+    <Compile Include="Source\MealsTest.cs" />
+    <Compile Include="Source\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RulesTest.cs" />
-    <Compile Include="StringHelperTest.cs" />
+    <Compile Include="Source\RulesTest.cs" />
+    <Compile Include="Source\StringHelperTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

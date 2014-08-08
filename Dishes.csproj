@@ -53,6 +53,7 @@
     <Compile Include="DishOrder.cs" />
     <Compile Include="DishType.cs" />
     <Compile Include="Food.cs" />
+    <Compile Include="IRules.cs" />
     <Compile Include="Meals.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

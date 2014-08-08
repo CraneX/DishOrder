@@ -9,19 +9,19 @@ namespace Dishes
     /// <summary>
     /// define the rules of dish order
     /// </summary>
-    internal static class Rules
+    internal class RulesImplement : IRules
     {
         /// <summary>
         /// order rules for morning 
         /// </summary>
-        private static readonly IDictionary<DishType, int> morningRules;
+        private IDictionary<DishType, int> morningRules;
 
         /// <summary>
         /// order rules for night
         /// </summary>
-        private static readonly IDictionary<DishType, int> nightRules;
+        private IDictionary<DishType, int> nightRules;
 
-        static Rules()
+        public RulesImplement()
         {
             // we can loaded rules from xml or database
             morningRules = new Dictionary<DishType, int>()
@@ -50,7 +50,7 @@ namespace Dishes
         /// <param name="type">dish type</param>
         /// <param name="number">order number</param>
         /// <returns>true of </returns>
-        public static bool IsAllow(DayTime dt, DishType type, int number)
+        public bool IsAllow(DayTime dt, DishType type, int number)
         {
             int n;
             switch (dt)

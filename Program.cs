@@ -23,7 +23,7 @@ namespace Dishes
                 // or command line as morning, 1, 2, 3
                 // input type
                 string input = string.Join("", args);
-                Console.Out.WriteLine(new DishOrder().PrintFoods(input));
+                Console.Out.WriteLine(new DishOrder(new RulesImplement()).PrintFoods(input));
             }
         }
     }

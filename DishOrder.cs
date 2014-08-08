@@ -17,8 +17,11 @@ namespace Dishes
 
         private static readonly ILog log = LogManager.GetLogger(typeof(DishOrder));
 
-        public DishOrder()
+        private static IRules OrderRules;
+
+        public DishOrder(IRules rules)
         {
+            OrderRules = rules;
         }
 
         /// <summary>
@@ -129,7 +132,7 @@ namespace Dishes
                 number += f.Number;
             }
 
-            if (Rules.IsAllow(dt, type, number))
+            if (OrderRules.IsAllow(dt, type, number))
             {
                 if (f == null)
                 {

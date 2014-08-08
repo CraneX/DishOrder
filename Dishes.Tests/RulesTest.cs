@@ -40,7 +40,8 @@ namespace Dishes.Tests
         [TestCase(DayTime.Night, DishType.Dessert, 2, false)]
         public void IsAllowTest(DayTime dt, DishType type, int num, bool expectValue)
         {
-            Assert.AreEqual(Rules.IsAllow(dt, type, num), expectValue);
+            RulesImplement rule = new RulesImplement();
+            Assert.AreEqual(rule.IsAllow(dt, type, num), expectValue);
         }
     }
 }

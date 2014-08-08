@@ -18,18 +18,23 @@ namespace Dishes
             this.dayTime = dt; 
         }
 
+        /// <summary>
+        /// Food type
+        /// </summary>
         public DishType FoodType
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Food number
+        /// </summary>
         public int Number
         {
             get;
             set;
         }
-
 
         /// <summary>
         /// to ouptut food as string
@@ -44,7 +49,7 @@ namespace Dishes
                 {
                     return string.Format(CultureInfo.InvariantCulture, "{0}(x{1})", s, Number);
                 }
-                else if (Number > 0)
+                else if (Number > 0) //only print order number great than zero
                 {
                     return s;
                 }

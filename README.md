@@ -1,9 +1,11 @@
 DishOrder
 =========
 
-Created by Crane on Aug.8, 2014
+Created by Crane(szcshui@gmail.com) on Aug.8, 2014
 
-C#
+C# code, created with vs2013, .NET 4.5
+
+Structure:
 
 Dishes.csproj is main console project
 
@@ -16,4 +18,4 @@ Log4Net 1.2.3
 
 Run Build Command:
 
-Build.BAT
+	Build.BAT
